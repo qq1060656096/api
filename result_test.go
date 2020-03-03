@@ -9,13 +9,13 @@ import (
 
 var result = NewResult("200", "ok")
 var profile = struct {
-Name string
-Age  int
+	Name string
+	Age  int
 }{Name: "赵1", Age: 18}
 var profile1 = profile
 var list = make([]interface{}, 0)
 
-func init()  {
+func init() {
 	list = append(list, profile)
 	profile.Name = "赵2"
 	profile.Age = 19
@@ -24,7 +24,6 @@ func init()  {
 	profile.Age = 20
 	list = append(list, profile)
 }
-
 
 func TestResultAndToJson(t *testing.T) {
 	result := NewResult("200", "ok")
@@ -48,7 +47,6 @@ func TestResultAndToXml(t *testing.T) {
 	assert.Equal(t, nil, err, err)
 	expected := `<Result><code>200</code><message>ok</message><data><Name>赵1</Name><Age>18</Age></data></Result>`
 	assert.Equal(t, expected, string(xmlStr))
-
 
 	result.Paging(list, 3, 1, 2)
 	xmlStr, err = xml.Marshal(result)
