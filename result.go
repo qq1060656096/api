@@ -3,17 +3,17 @@ package api
 import "math"
 
 type Result struct {
-	Code    string      `json:"code" xml:"code"`
-	Message string      `json:"message" xml:"message"`
-	Data    interface{} `json:"data" xml:"data"`
+	Code    string      `json:"code" xml:"code" form:"code"`
+	Message string      `json:"message" xml:"message" form:"message"`
+	Data    interface{} `json:"data" xml:"data" form:"data"`
 }
 
 type PagingResult struct {
-	TotalCount     int         `json:"totalCount" xml:"totalCount"`
-	TotalPageCount int         `json:"totalPageCount" xml:"totalPageCount"`
-	Page           int         `json:"page" xml:"page"`
-	PageSize       int         `json:"pageSize" xml:"pageSize"`
-	Lists          interface{} `json:"lists" xml:"lists"`
+	TotalCount     int         `json:"totalCount" xml:"totalCount" form:"totalCount"`
+	TotalPageCount int         `json:"totalPageCount" xml:"totalPageCount" form:"totalPageCount"`
+	Page           int         `json:"page" xml:"page" form:"page"`
+	PageSize       int         `json:"pageSize" xml:"pageSize" form:"pageSize"`
+	Lists          interface{} `json:"lists" xml:"lists" form:"lists"`
 }
 
 func NewResult(code string, message string) *Result {
