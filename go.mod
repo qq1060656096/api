@@ -1,4 +1,4 @@
-module github.com/qq1060656096/go-api
+module github.com/qq1060656096/api
 
 go 1.13
 
